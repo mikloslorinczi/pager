@@ -13,6 +13,7 @@ $ pager (flags) [command] [sub-command]
 ```
 
 **Available Commands:**
+
 |Command|Description|
 |-|-|
 |oncall|On-call information|
@@ -21,6 +22,7 @@ $ pager (flags) [command] [sub-command]
 |help|Help about any command|
 
 **Flags:**
+
 |Shorthand|Flag|Type|Description|Default|
 |-|-|-|-|-|
 |-t|--api_token|string|Pager Duty API Token|

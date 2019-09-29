@@ -8,15 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - .gitignore
 
+### Fixed
+- format-string in GetAllUserID error
+- README.md tables
+
 ## [1.1.0] - 2019-09-29
 ### Added
 - Proper Since / Until timeframe
 - Time Zone selection
 - Proper User / Team filter to on-call hours
 - Basic usage in README.md
-
-### Fixed
-- format-string in GetAllUserID error
 
 ### Changed
 - Improved tooltips
