@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- .gitignore
 
 ## [1.1.0] - 2019-09-29
 ### Added
@@ -12,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Time Zone selection
 - Proper User / Team filter to on-call hours
 - Basic usage in README.md
+
+### Fixed
+- format-string in GetAllUserID error
 
 ### Changed
 - Improved tooltips

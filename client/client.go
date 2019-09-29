@@ -87,7 +87,7 @@ func GetAllUserID(team string) []string {
 		if strings.Contains(strings.ToLower(aTeam.Name), strings.ToLower(team)) || team == aTeam.ID {
 			membersResp, err := GetMembersList(aTeam.ID)
 			if err != nil {
-				log.WithError(err).Fatalf("Failed to get members of the team %", aTeam.Name)
+				log.WithError(err).Fatalf("Failed to get members of the team %s", aTeam.Name)
 			}
 			for _, member := range membersResp.Members {
 				foundIDs = append(foundIDs, member.User.ID)
