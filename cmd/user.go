@@ -8,7 +8,7 @@ import (
 var userCmd = &cobra.Command{
 	Use:     "user",
 	Aliases: []string{"u", "us", "users"},
-	Short:   "User Infromation",
+	Short:   "User Information",
 	Long: `
 Get User information
 	`,

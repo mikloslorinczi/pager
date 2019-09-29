@@ -7,6 +7,7 @@ require (
 	github.com/hashicorp/golang-lru v0.5.3 // indirect
 	github.com/kr/pty v1.1.8 // indirect
 	github.com/mitchellh/go-homedir v1.1.0
+	github.com/pkg/errors v0.8.0
 	github.com/rogpeppe/go-internal v1.3.2 // indirect
 	github.com/sirupsen/logrus v1.2.0
 	github.com/spf13/cobra v0.0.5

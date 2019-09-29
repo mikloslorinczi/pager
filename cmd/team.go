@@ -8,7 +8,7 @@ import (
 var teamCmd = &cobra.Command{
 	Use:     "team",
 	Aliases: []string{"t", "teams", "tm", "te"},
-	Short:   "Team Infromation",
+	Short:   "Team Information",
 	Long: `
 Get Team information
 	`,

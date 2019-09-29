@@ -33,5 +33,5 @@ func EndOfMonth(t time.Time) time.Time {
 
 // FormatDate formats a timestamp in the simple 1990.10.13 format
 func FormatDate(t time.Time) string {
-	return fmt.Sprintf("%d.%d.%d", t.Year(), t.Month(), t.Day())
+	return fmt.Sprintf("%d-%d-%d", t.Year(), t.Month(), t.Day())
 }

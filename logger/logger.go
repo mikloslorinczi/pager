@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/mikloslorinczi/pager/version"
+
 	"github.com/sirupsen/logrus"
 )
 

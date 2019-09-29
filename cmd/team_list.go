@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/mikloslorinczi/pager/client"
-	"github.com/mikloslorinczi/pager/model"
+
 	"github.com/spf13/cobra"
 )
 
@@ -24,18 +24,9 @@ func init() {
 }
 
 func listTeams() {
-	req := client.GET()
-	req.Path("/teams")
-	res, err := req.Do()
+	teamsResp, err := client.GetTeamsList()
 	if err != nil {
-		log.WithError(err).Fatal("HTTP Client failed to GET Response from Pager Futy API")
-	}
-	if !res.Ok {
-		log.Fatalf("HTTP Error. Code: %d Body: %s", res.StatusCode, res.String())
-	}
-	var teamsResp model.TeamsResponse
-	if err := res.JSON(&teamsResp); err != nil {
-		log.WithError(err).Fatal("Failed to JSON Parse Response")
+		log.WithError(err).Fatal("Failed to get the list of teams")
 	}
 	for _, team := range teamsResp.Teams {
 		fmt.Printf("ID: %s Name: %s\n", team.ID, team.Name)

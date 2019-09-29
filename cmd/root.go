@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/mikloslorinczi/pager/config"
 	"github.com/mikloslorinczi/pager/logger"
+
 	"github.com/spf13/cobra"
 )
 
@@ -24,6 +25,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVarP(&config.ConfigFile, "config", "c", "", "Config file")
 	rootCmd.PersistentFlags().StringP("api_url", "u", "https://api.pagerduty.com", "Pager Duty API URL")
 	rootCmd.PersistentFlags().StringP("api_token", "t", "", "Pager Duty API Token")
+	rootCmd.PersistentFlags().StringP("time_zone", "z", "CET", "Time Zone in which results will be rendered")
 }
 
 // Execute is the entrypoint of the Cobra app, it executes the root command

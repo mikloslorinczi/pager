@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/mikloslorinczi/pager/client"
+	"github.com/mikloslorinczi/pager/config"
 	"github.com/mikloslorinczi/pager/model"
 
 	"github.com/spf13/cobra"
@@ -13,7 +14,7 @@ import (
 var oncallCmd = &cobra.Command{
 	Use:     "oncall",
 	Aliases: []string{"oc", "onc", "call", "on-call", "oncalls", "on-calls"},
-	Short:   "Oncall information",
+	Short:   "On-call information",
 	Long: `
 Oncall information
 Who and when were are and will be on call
@@ -32,12 +33,13 @@ func init() {
 func onCall() {
 	req := client.GET()
 	req.Path("/oncalls")
+	req.AddQuery("time_zone", config.GetTimeZone())
 	res, err := req.Do()
 	if err != nil {
-		log.WithError(err).Fatal("HTTP Client failed to GET Response from Pager Futy API")
+		log.WithError(err).Fatal("HTTP Client failed to GET Response from PagerDuty API")
 	}
 	if !res.Ok {
-		log.Errorf("HTTP Error. Code: %d Body: %s", res.StatusCode, res.String())
+		log.Fatalf("HTTP Error. Code: %d Body: %s", res.StatusCode, res.String())
 	}
 	var oncallsResp model.OncallsResponse
 	if err := res.JSON(&oncallsResp); err != nil {

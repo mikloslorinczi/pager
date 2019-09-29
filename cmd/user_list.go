@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/spf13/viper"
-
 	"github.com/mikloslorinczi/pager/client"
 	"github.com/mikloslorinczi/pager/model"
+
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 // userListCmd represents the user list command
@@ -28,18 +28,9 @@ func init() {
 }
 
 func listUsers() {
-	req := client.GET()
-	req.Path("/users")
-	res, err := req.Do()
+	usersResp, err := client.GetAllUser()
 	if err != nil {
-		log.WithError(err).Fatal("HTTP Client failed to GET Response from PagerDuty API")
-	}
-	if !res.Ok {
-		log.Fatalf("HTTP Error. Code: %d Body: %s", res.StatusCode, res.String())
-	}
-	var usersResp model.UsersResponse
-	if err := res.JSON(&usersResp); err != nil {
-		log.WithError(err).Fatal("Failed to JSON Parse Response")
+		log.WithError(err).Fatal("Failed to get the list of all users")
 	}
 	for _, user := range usersResp.Users {
 		if team := viper.GetString("team"); team != "" {

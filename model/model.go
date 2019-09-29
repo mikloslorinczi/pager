@@ -56,3 +56,11 @@ type Oncall struct {
 type OncallsResponse struct {
 	Oncalls []Oncall `json:"oncalls"`
 }
+
+type Member struct {
+	User UUser `json:"user"`
+}
+
+type MembersResponse struct {
+	Members []Member `json:"members"`
+}
