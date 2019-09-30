@@ -155,7 +155,7 @@ func listOncallHours() {
 func calculateWorkHours(start, end time.Time, location *time.Location) (int, int) {
 	onWork, offWork := 0, 0
 	elapsed := end.Sub(start)
-	for offSet := time.Duration(0); offSet <= elapsed; offSet += time.Hour {
+	for offSet := time.Duration(0); offSet < elapsed; offSet += time.Hour {
 		// Check every hour (as a timestamp) from start to end
 		sample := start.Add(offSet)
 		// Skip hour that fell out of the since-until timeframe

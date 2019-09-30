@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - format-string in GetAllUserID error
 - README.md tables
+- Oncall hours loop condition from offset <= elapsed to offset < elapsed
 
 ## [1.1.0] - 2019-09-29
 ### Added
